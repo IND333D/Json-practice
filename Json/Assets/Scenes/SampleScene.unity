@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 01916a30840c7f14aa8970c2f31a2ecb, type: 2}
   m_LightingSettings: {fileID: 823776617}
 --- !u!196 &4
 NavMeshSettings:
@@ -153,9 +153,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsontxt: {fileID: 4900000, guid: cdd6727c554ebdf459857841282a3d1d, type: 3}
-  block: {fileID: 7645378449803191944, guid: 1a915b6890171bc48b86207ff310931d, type: 3}
-  playerlist:
-    player: []
+  blockopaque: {fileID: 7645378449803191944, guid: 1a915b6890171bc48b86207ff310931d, type: 3}
+  blocktransparent: {fileID: 7645378449803191944, guid: 24997650fb6ff45478000a156cbe1b78, type: 3}
+  grass: {fileID: 7524842468427954126, guid: ac7bdf4c4949b374490250cf590f4135, type: 3}
+  grassblktop: {fileID: 2172308153641452214, guid: 2578f482bb9e3594fb7eb791cb2cb328, type: 3}
+  slabs: {fileID: 7684772295165439860, guid: 082fd16b1f9d5ee4db4435ba985c58ff, type: 3}
+  blocklist:
+    List: []
+  textures:
+  - {fileID: 2800000, guid: bfadd94896247ca479476d52d95024e6, type: 3}
+  - {fileID: 2800000, guid: 25774c89c155fb0429402ad3c8902184, type: 3}
+  - {fileID: 2800000, guid: 7f76fabd26d54c84fa5371ae40087830, type: 3}
+  - {fileID: 2800000, guid: 4d9dcbe729ba02644a3a834956b36df7, type: 3}
+  Planttype:
+  - {fileID: 2800000, guid: bf60c6f378f8d0a4fa28415524b0711b, type: 3}
+  - {fileID: 2800000, guid: 829be000bd1ee374ab4af1060c2b214a, type: 3}
+  - {fileID: 2800000, guid: 5eea7e75ce8a67e40a5304a8e164f296, type: 3}
+  - {fileID: 2800000, guid: a4d445fb2c6640b40a9a3138167f2d32, type: 3}
+  dirttype:
+  - {fileID: 2800000, guid: 5d5aad4422fbbf546aae37a9b64ca0e2, type: 3}
 --- !u!4 &238438456
 Transform:
   m_ObjectHideFlags: 0
@@ -270,7 +286,7 @@ LightingSettings:
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
   serializedVersion: 2
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 0
   m_RealtimeEnvironmentLighting: 1
