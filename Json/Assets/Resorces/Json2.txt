@@ -1,0 +1,9 @@
+{"list":[
+{"axes": [-140, 62, 70], 
+"type": "dirt", "properties": {}}, 
+{"axes": [-140, 62, 71], 
+"type": "dirt", "properties": {}}, 
+{"axes": [-140, 62, 72], 
+"type": "dirt", "properties": {}}
+]
+}
