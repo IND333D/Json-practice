@@ -152,26 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805558bb035e52b43814f40ee6aa649e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsontxt: {fileID: 4900000, guid: cdd6727c554ebdf459857841282a3d1d, type: 3}
-  blockopaque: {fileID: 7645378449803191944, guid: 1a915b6890171bc48b86207ff310931d, type: 3}
-  blocktransparent: {fileID: 7645378449803191944, guid: 24997650fb6ff45478000a156cbe1b78, type: 3}
-  grass: {fileID: 7524842468427954126, guid: ac7bdf4c4949b374490250cf590f4135, type: 3}
-  grassblktop: {fileID: 2172308153641452214, guid: 2578f482bb9e3594fb7eb791cb2cb328, type: 3}
-  slabs: {fileID: 7684772295165439860, guid: 082fd16b1f9d5ee4db4435ba985c58ff, type: 3}
+  _url: https://zion-test.s3.ap-south-1.amazonaws.com/assignment/mcw_data_1.json
+  jsonText: {fileID: 4900000, guid: cdd6727c554ebdf459857841282a3d1d, type: 3}
+  objlists: {fileID: 1493869620}
+  texturelist: {fileID: 1073067680}
   blocklist:
     List: []
-  textures:
-  - {fileID: 2800000, guid: bfadd94896247ca479476d52d95024e6, type: 3}
-  - {fileID: 2800000, guid: 25774c89c155fb0429402ad3c8902184, type: 3}
-  - {fileID: 2800000, guid: 7f76fabd26d54c84fa5371ae40087830, type: 3}
-  - {fileID: 2800000, guid: 4d9dcbe729ba02644a3a834956b36df7, type: 3}
-  Planttype:
-  - {fileID: 2800000, guid: bf60c6f378f8d0a4fa28415524b0711b, type: 3}
-  - {fileID: 2800000, guid: 829be000bd1ee374ab4af1060c2b214a, type: 3}
-  - {fileID: 2800000, guid: 5eea7e75ce8a67e40a5304a8e164f296, type: 3}
-  - {fileID: 2800000, guid: a4d445fb2c6640b40a9a3138167f2d32, type: 3}
-  dirttype:
-  - {fileID: 2800000, guid: 5d5aad4422fbbf546aae37a9b64ca0e2, type: 3}
 --- !u!4 &238438456
 Transform:
   m_ObjectHideFlags: 0
@@ -421,4 +407,113 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1073067679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1073067681}
+  - component: {fileID: 1073067680}
+  m_Layer: 0
+  m_Name: TextureList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1073067680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073067679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284a1376fea4bc14f80b1a27d17d1899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plant:
+    plants:
+    - {fileID: 2800000, guid: bf60c6f378f8d0a4fa28415524b0711b, type: 3}
+    - {fileID: 2800000, guid: 829be000bd1ee374ab4af1060c2b214a, type: 3}
+    - {fileID: 2800000, guid: 3e94dd007e5159244a6effe9e34b4dee, type: 3}
+    - {fileID: 2800000, guid: e2826764e5d360a418719c12f0205e84, type: 3}
+    - {fileID: 2800000, guid: 7f76fabd26d54c84fa5371ae40087830, type: 3}
+    - {fileID: 2800000, guid: 4d9dcbe729ba02644a3a834956b36df7, type: 3}
+  blocktxtre:
+    grassblock: {fileID: 2800000, guid: bfadd94896247ca479476d52d95024e6, type: 3}
+    glass: {fileID: 2800000, guid: 25774c89c155fb0429402ad3c8902184, type: 3}
+    dirt: {fileID: 2800000, guid: 5d5aad4422fbbf546aae37a9b64ca0e2, type: 3}
+    oakplank: {fileID: 2800000, guid: 9553b69b1e620be488da2d177da8814f, type: 3}
+    concrete: {fileID: 2800000, guid: dc53508a77cd25d4f9ef994f1e18ff9f, type: 3}
+    water: {fileID: 2800000, guid: dad219089925e5a4fbba1b75038d5d6b, type: 3}
+--- !u!4 &1073067681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073067679}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -114.28387, y: 64.73502, z: 84.54428}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1493869619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1493869621}
+  - component: {fileID: 1493869620}
+  m_Layer: 0
+  m_Name: ObjectsList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1493869620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493869619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a09a4395e9245744894b91b461e0318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grassobj: {fileID: 7524842468427954126, guid: ac7bdf4c4949b374490250cf590f4135, type: 3}
+  slab: {fileID: 7684772295165439860, guid: 082fd16b1f9d5ee4db4435ba985c58ff, type: 3}
+  block:
+    grassblock: {fileID: 2172308153641452214, guid: 2578f482bb9e3594fb7eb791cb2cb328, type: 3}
+    blockTransparent: {fileID: 7645378449803191944, guid: 24997650fb6ff45478000a156cbe1b78, type: 3}
+    blockOpaque: {fileID: 7645378449803191944, guid: 1a915b6890171bc48b86207ff310931d, type: 3}
+    blockcutout: {fileID: 7645378449803191944, guid: 7358b2110e023ee43b38bb5a6bd34386, type: 3}
+    blockfade: {fileID: 7645378449803191944, guid: 110ad138bf8ab9246bbe8ec4fce16e26, type: 3}
+--- !u!4 &1493869621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493869619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -114.28387, y: 64.73502, z: 84.54428}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
