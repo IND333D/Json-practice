@@ -22,5 +22,6 @@ public class Textures : MonoBehaviour
         public Texture oakplank;
         public Texture concrete;
         public Texture water;
+        public Texture flowerpot;
     }
 }

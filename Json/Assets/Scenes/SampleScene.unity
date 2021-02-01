@@ -445,6 +445,9 @@ MonoBehaviour:
     - {fileID: 2800000, guid: e2826764e5d360a418719c12f0205e84, type: 3}
     - {fileID: 2800000, guid: 7f76fabd26d54c84fa5371ae40087830, type: 3}
     - {fileID: 2800000, guid: 4d9dcbe729ba02644a3a834956b36df7, type: 3}
+    - {fileID: 2800000, guid: f3391c89449045e46bfe5eb9f8f27238, type: 3}
+    - {fileID: 2800000, guid: 5eea7e75ce8a67e40a5304a8e164f296, type: 3}
+    - {fileID: 2800000, guid: a4d445fb2c6640b40a9a3138167f2d32, type: 3}
   blocktxtre:
     grassblock: {fileID: 2800000, guid: bfadd94896247ca479476d52d95024e6, type: 3}
     glass: {fileID: 2800000, guid: 25774c89c155fb0429402ad3c8902184, type: 3}
@@ -452,6 +455,7 @@ MonoBehaviour:
     oakplank: {fileID: 2800000, guid: 9553b69b1e620be488da2d177da8814f, type: 3}
     concrete: {fileID: 2800000, guid: dc53508a77cd25d4f9ef994f1e18ff9f, type: 3}
     water: {fileID: 2800000, guid: dad219089925e5a4fbba1b75038d5d6b, type: 3}
+    flowerpot: {fileID: 2800000, guid: 902cb4e33e8fbdf49905f231fd685cfc, type: 3}
 --- !u!4 &1073067681
 Transform:
   m_ObjectHideFlags: 0
@@ -497,6 +501,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grassobj: {fileID: 7524842468427954126, guid: ac7bdf4c4949b374490250cf590f4135, type: 3}
   slab: {fileID: 7684772295165439860, guid: 082fd16b1f9d5ee4db4435ba985c58ff, type: 3}
+  flowerpot: {fileID: 8667724093230701977, guid: 27ab33a72bf3dd64c8cf9b7ef80ea9e9, type: 3}
+  fence: {fileID: 8524078678484444859, guid: 9f6e60759e95fda45938b293dedc8f24, type: 3}
   block:
     grassblock: {fileID: 2172308153641452214, guid: 2578f482bb9e3594fb7eb791cb2cb328, type: 3}
     blockTransparent: {fileID: 7645378449803191944, guid: 24997650fb6ff45478000a156cbe1b78, type: 3}

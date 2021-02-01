@@ -42,6 +42,11 @@ public class JsonReader : MonoBehaviour
         public string plant_type;
         public string type;
         public string material;
+        public bool east;
+        public bool west;
+        public bool north;
+        public bool south;
+        public string half;
         //in glss and stained terracotta --color
         //in plak -- material
         //in water -- falling, flowing, levels
@@ -92,8 +97,9 @@ public class JsonReader : MonoBehaviour
         {
             //saving float array position to vector 3.
             Vector3 points = new Vector3(blocklist.List[i].axes[0], blocklist.List[i].axes[1], blocklist.List[i].axes[2]);
-            string typeofblock = blocklist.List[i].type;    
+            string typeofblock = blocklist.List[i].type;
 
+            Debug.Log(typeofblock);
             //for applying textures and spawning blocks.
             SpawnapplyTexture(typeofblock, points, blocklist.List[i].properties);
         }
@@ -121,30 +127,19 @@ public class JsonReader : MonoBehaviour
 
             case "plant":
                 
-                if(property.plant_type == "rose_bush")
+                if (property.plant_type == "grass")
                 {
-                    GameObject plant = Instantiate(objlists.grassobj, points, Quaternion.identity);
-                    plant.GetComponent<Renderer>().material.mainTexture = texturelist.plant.plants[0];
-                    plant.name = "rose_bush";
-
-                }
-                else if (property.plant_type == "grass")
-                {
-                    GameObject plant = Instantiate(objlists.grassobj, points, Quaternion.identity);
+                    GameObject plant = Instantiate(objlists.grassobj, points + new Vector3(0,-0.5f,0), Quaternion.identity);
+                    //random size, rotation.
                     plant.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+                    float random = Random.Range(0.4f, 1f);
+                    plant.transform.localScale = new Vector3(random, random, random);
+                    Renderer[] plantmat = plant.GetComponentsInChildren<Renderer>();
+                    foreach (Renderer mater in plantmat)
+                    {
+                        mater.material.color = Color.green;
+                    }
                     plant.name = "grass";
-                }
-                else if (property.plant_type == "peony")
-                {
-                    GameObject plant = Instantiate(objlists.grassobj, points, Quaternion.identity);
-                    plant.GetComponent<Renderer>().material.mainTexture = texturelist.plant.plants[2];
-                    plant.name = "peony";
-                }
-                else if (property.plant_type == "tall_grass")
-                {
-                    GameObject plant = Instantiate(objlists.grassobj, points, Quaternion.identity);
-                    plant.GetComponent<Renderer>().material.mainTexture = texturelist.plant.plants[4];
-                    plant.name = "tall_grass";
                 }
                 break;
 
@@ -196,6 +191,111 @@ public class JsonReader : MonoBehaviour
                 GameObject furnace = Instantiate(objlists.block.blockOpaque, points, Quaternion.identity);
                 furnace.GetComponent<Renderer>().material.color = Color.grey;
                 furnace.name = "furnace";
+                break;
+
+            case "flower_pot":
+                GameObject flowerpot = Instantiate(objlists.flowerpot, points, Quaternion.identity);
+                flowerpot.GetComponentInChildren<Renderer>().material.color = Color.red;
+                flowerpot.name = "flower_pot";
+                break;
+
+            case "fence":
+                float rot = (property.north) ? 0f : (property.east) ? 90 : (property.south) ? 180 : (property.east) ? 270 : 0;
+                GameObject fence = Instantiate(objlists.fence, points, Quaternion.Euler(0,rot,0));
+
+                //this is expensive bcuz of loop.
+                //todo: instead use fence model and apply texture;
+                //iterating just for now.
+                Renderer[] mat = fence.GetComponentsInChildren<Renderer>();
+                foreach(Renderer mater in mat)
+                {
+                    mater.material.mainTexture = texturelist.blocktxtre.oakplank;
+                }
+                fence.name = "fence";
+                break;
+
+            case "double_plant":
+                if(property.half == "lower")
+                {
+                    if (property.plant_type == "rose_bush")
+                    {
+                        GameObject plant = Instantiate(objlists.grassobj, points + new Vector3(0, -0.5f, 0), Quaternion.identity);
+
+                        //this is expensive bcuz of loop.
+                        Renderer[] plantmat = plant.GetComponentsInChildren<Renderer>();
+                        foreach (Renderer mater in plantmat)
+                        {
+                            mater.material.mainTexture = texturelist.plant.plants[0];
+                        }
+                        plant.name = "rose_bush";
+
+                    }
+                    else if (property.plant_type == "peony")
+                    {
+                        GameObject plant = Instantiate(objlists.grassobj, points + new Vector3(0, -0.5f, 0), Quaternion.identity);
+
+                        //this is expensive bcuz of loop.
+                        Renderer[] plantmat = plant.GetComponentsInChildren<Renderer>();
+                        foreach (Renderer mater in plantmat)
+                        {
+                            mater.material.mainTexture = texturelist.plant.plants[2];
+                        }
+                        plant.name = "peony";
+                    }
+                    else if (property.plant_type == "tall_grass")
+                    {
+                        GameObject plant = Instantiate(objlists.grassobj, points + new Vector3(0, -0.5f, 0), Quaternion.identity);
+                        //this is expensive bcuz of loop.
+                        Renderer[] plantmat = plant.GetComponentsInChildren<Renderer>();
+                        foreach (Renderer mater in plantmat)
+                        {
+                            mater.material.mainTexture = texturelist.plant.plants[3];
+                            mater.material.color = Color.green;
+                        }
+                        plant.name = "tall_grass";
+                    }
+                }
+                else
+                {
+                    if (property.plant_type == "rose_bush")
+                    {
+                        GameObject plant = Instantiate(objlists.grassobj, points + new Vector3(0, -0.5f, 0), Quaternion.identity);
+
+                        //this is expensive bcuz of loop.
+                        Renderer[] plantmat = plant.GetComponentsInChildren<Renderer>();
+                        foreach (Renderer mater in plantmat)
+                        {
+                            mater.material.mainTexture = texturelist.plant.plants[6];
+                        }
+                        plant.name = "rose_bush";
+
+                    }
+                    else if (property.plant_type == "peony")
+                    {
+                        GameObject plant = Instantiate(objlists.grassobj, points + new Vector3(0, -0.5f, 0), Quaternion.identity);
+
+                        //this is expensive bcuz of loop.
+                        Renderer[] plantmat = plant.GetComponentsInChildren<Renderer>();
+                        foreach (Renderer mater in plantmat)
+                        {
+                            mater.material.mainTexture = texturelist.plant.plants[7];
+                        }
+                        plant.name = "peony";
+                    }
+                    else if (property.plant_type == "tall_grass")
+                    {
+                        GameObject plant = Instantiate(objlists.grassobj, points + new Vector3(0, -0.5f, 0), Quaternion.identity);
+                        //this is expensive bcuz of loop.
+                        Renderer[] plantmat = plant.GetComponentsInChildren<Renderer>();
+                        foreach (Renderer mater in plantmat)
+                        {
+                            mater.material.mainTexture = texturelist.plant.plants[8];
+                            mater.material.color = Color.green;
+                        }
+                        plant.name = "tall_grass";
+                    }
+                }
+                
                 break;
 
             default:

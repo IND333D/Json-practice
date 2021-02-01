@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8381169943256858762}
   - component: {fileID: 8625366829399880056}
   m_Layer: 0
-  m_Name: default cube
+  m_Name: default opaque
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

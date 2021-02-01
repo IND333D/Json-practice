@@ -6,6 +6,8 @@ public class ObjectsList : MonoBehaviour
 {
     public GameObject grassobj;
     public GameObject slab;
+    public GameObject flowerpot;
+    public GameObject fence;
     public Blocks block = new Blocks();
 
     [System.Serializable]
